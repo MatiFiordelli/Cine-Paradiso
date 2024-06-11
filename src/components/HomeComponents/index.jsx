@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import FadeEffect from "../Resources/FadeEffect";
 import TopPresentation from "./TopPresentation";
 import MovieBillboard from "./MovieBillboard";
@@ -6,20 +6,24 @@ import UpcomingMovies from "./UpcomingMovies";
 import Swal from "sweetalert2";
 
 export default function HomeComponent() {
+  const [showPopup, setShowPopup] = useState(false);
+
   useEffect(() => {
-    // Verificar si estamos en la página de éxito de pago y mostrar el SweetAlert2
-    if (window.location.pathname === "/payment_success") {
-      Swal.fire({
-        icon: "success",
-        title: "Pago exitoso",
-        text: "¡Gracias por su compra!",
-        confirmButtonText: "Ok",
-      }).then(() => {
-        window.location.href = "https://cine-paradiso.vercel.app"; // Redireccionar después de hacer clic en OK
-      });
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get("payment_success")) {
+      // Si la URL contiene el parámetro "payment_success", mostrar SweetAlert2
+      setShowPopup(true);
+      showSuccessAlert();
     }
   }, []);
 
+  const showSuccessAlert = () => {
+    Swal.fire({
+      icon: "success",
+      title: "¡Pago Exitoso!",
+      text: "¡Gracias por su compra!",
+    });
+  };
 
   return (
     <FadeEffect>
