@@ -1,5 +1,5 @@
 import React from "react";
-import LogoImage from "./logo.webp";
+import LogoImage from "../../../../../public/logo.webp";
 import "./index.css";
 import pathroutes from "../../../../helpers/pathroutes";
 

@@ -11,16 +11,16 @@ export default function AboutUsSlider() {
     </div>
     <div className="carousel-inner">
       <div className="carousel-item active">
-        <img className="d-block w-100 imgRnd" src="./cineparadisoext.webp" alt="Cine Paradiso Fachada" title="Cine Paradiso Fachada" aria-label="Imagen del Cine Paradiso por la parte externa" />
+        <img className="d-block w-100 imgRnd" src="../../../../public/cineparadisoext.webp" alt="Cine Paradiso Fachada" title="Cine Paradiso Fachada" aria-label="Imagen del Cine Paradiso por la parte externa" />
       </div>
       <div className="carousel-item">
-        <img className="d-block w-100 imgRnd" src="./cineparadisoint1.webp" alt="Cine Paradiso Asientos" title="Cine Paradiso Asientos" aria-label="Imagen de los asientos de Cine Paradiso" />
+        <img className="d-block w-100 imgRnd" src="../../../../public/cineparadisoint1.webp" alt="Cine Paradiso Asientos" title="Cine Paradiso Asientos" aria-label="Imagen de los asientos de Cine Paradiso" />
       </div>
       <div className="carousel-item">
-        <img className="d-block w-100 imgRnd" src="./salacineparadiso.webp" alt="Interior de la sala de cine Paradiso" title="Interior de la sala de cine Paradiso" aria-label="Imagen de la sala de Cine Paradiso por la parte interna" />
+        <img className="d-block w-100 imgRnd" src="../../../../public/salacineparadiso.webp" alt="Interior de la sala de cine Paradiso" title="Interior de la sala de cine Paradiso" aria-label="Imagen de la sala de Cine Paradiso por la parte interna" />
       </div>
       <div className="carousel-item">
-        <img className="d-block w-100 imgRnd" src="./snacksparadiso.webp" alt="Sala para comprar snacks de cine Paradiso" title="Sala para comprar snacks de cine Paradiso" aria-label="Sala donde se compran los snacks de Cine Paradiso" />
+        <img className="d-block w-100 imgRnd" src="../../../../public/snacksparadiso.webp" alt="Sala para comprar snacks de cine Paradiso" title="Sala para comprar snacks de cine Paradiso" aria-label="Sala donde se compran los snacks de Cine Paradiso" />
       </div>
     </div>
     <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
