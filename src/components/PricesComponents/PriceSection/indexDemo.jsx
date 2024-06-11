@@ -110,7 +110,7 @@ export default function PriceSectionDemo() {
                                         <h3 className=" priceHead3 priceHead5">***</h3>
                                         <p className="spanHead">SEAT</p>
                                     </div>
-                                    <div className="barcode"><img src="src\assets\images\CineParadiso\barcode.svg" alt="codigo de barras para ticket"  /></div>
+                                    <div className="barcode"><img src={barcode} alt="codigo de barras para ticket"  /></div>
                                 </div>
                             </div>
                         </div>
