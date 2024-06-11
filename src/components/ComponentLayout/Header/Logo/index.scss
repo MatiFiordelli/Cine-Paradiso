@@ -1,0 +1,11 @@
+.image-logo{
+    border-radius:50%;
+    filter:grayscale(0);
+    transition: 2200ms ease-in-out;
+    user-select: none;
+
+    &:hover{
+        filter: grayscale(1);
+        transform: rotateZ(360deg);        
+    }
+}

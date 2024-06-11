@@ -1,0 +1,86 @@
+.summary-bar {
+  align-items: baseline;
+  background-color: transparent;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.4), transparent);
+  bottom: 0px;
+  right: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  overflow: hidden;
+  padding: 10px 20px;
+  perspective: 50vw;
+  pointer-events: none;
+  position: absolute;
+  animation: animateSummaryBar 700ms ease-in forwards;
+  text-shadow: 1px 1px 1px rgb(53, 51, 51);
+  text-wrap: pretty;
+}
+@keyframes animateSummaryBar {
+  0% {
+    transform: rotateX(90deg) perspective(1000px);
+  }
+  100% {
+    transform: rotateX(0deg) perspective(1000px);
+  }
+}
+.summary-bar .summary-bar__title {
+  color: #ffffff;
+  font-family: "Raleway-VariableFont_wght", Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 2.4rem;
+  margin: 0px 0px 10px 0px;
+  opacity: 0;
+  animation: animateTitle 1300ms ease-out forwards;
+}
+@keyframes animateTitle {
+  0% {
+    opacity: 0;
+    transform: translateY(-50vh);
+  }
+  50% {
+    opacity: 0.2;
+    transform: translateY(-25vh);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0vh);
+  }
+}
+.summary-bar .summary-bar__subtitle {
+  align-items: center;
+  display: flex;
+  opacity: 0;
+  font-family: "Monserrat-Medium", Arial, Helvetica, sans-serif;
+  animation: animateSubtitle 800ms ease-out forwards;
+  animation-delay: 1300ms;
+  backface-visibility: hidden;
+  color: #dddddd;
+  text-align: center;
+}
+@keyframes animateSubtitle {
+  0% {
+    opacity: 0;
+    transform: rotateX(-90deg) skewX(-20deg) translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg) translateY(0px);
+  }
+}
+.summary-bar .summary-bar__subtitle .summary-bar__subtitle--year {
+  color: #dddddd;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+.summary-bar .summary-bar__subtitle .summary-bar__subtitle--runtime {
+  font-size: 1rem;
+}
+.summary-bar .summary-bar__subtitle .summary-bar__subtitle--genres {
+  font-size: 1rem;
+}
+.summary-bar .summary-bar__subtitle .summary-bar__subtitle--vote_average {
+  font-size: 1.1rem;
+  font-weight: 700;
+}/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,17 @@
+.right-content-details {
+  background-color: #323039;
+  color: #DDD;
+}
+.right-content-details .nav-tabs * {
+  border: none;
+}
+.right-content-details .nav-tabs .nav-link.active {
+  color: rgb(236, 195, 46);
+  border-bottom: 2px solid rgb(236, 195, 46) !important;
+  border-radius: 0;
+  font-weight: bold;
+  background-color: transparent;
+}
+.right-content-details .nav-tabs .nav-link {
+  color: inherit;
+}/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,28 @@
+.right-content-details{
+    background-color: #323039;
+    color:#DDD;
+
+    & .nav-tabs {
+        & *{
+            border:none;
+        }
+        & .nav-link{
+            &.active{
+                color: rgb(236, 195, 46);
+                border-bottom: 2px solid rgb(236, 195, 46) !important;
+                border-radius: 0;
+                font-weight: bold;
+                background-color: transparent;
+            }
+        }
+        & .nav-link {
+            color:inherit;
+        }
+    }
+}
+
+@media only screen and (max-width:575px){
+    .right-content-details{
+        //width: 100vw;
+    }
+}

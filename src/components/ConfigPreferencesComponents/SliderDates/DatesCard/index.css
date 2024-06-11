@@ -1,0 +1,58 @@
+.date-card {
+  border: 0.8px solid rgb(224, 179, 46);
+  color: #000;
+  text-align: center;
+  text-transform: uppercase;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Circular";
+  transition: 200ms;
+}
+.date-card .date-card__title {
+  font-size: 1.1rem;
+  background-color: #C20000;
+  border: 0.8px solid #C20000 !important;
+  color: #FFE7ED;
+  flex: 0.5;
+}
+.date-card .date-card__date {
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+  font-size: 1.5rem;
+  font-weight: 300;
+  justify-content: center;
+  align-items: center;
+}
+.date-card .date-card__date .date-card__date--month {
+  margin: 0;
+}
+.date-card .date-card__date .date-card__date--day {
+  margin: 0;
+}
+
+.date-card:hover {
+  border: 0.8px solid #af266e;
+  box-shadow: 0px 0px 3px 0px #982461;
+  background: #ffe7ed;
+}
+.date-card:hover .date-card__title {
+  background-color: #D22366;
+}
+
+@media only screen and (max-width: 576px) {
+  .date-card {
+    width: 110px;
+    height: 110px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .date-card {
+    width: 175px;
+    height: 175px;
+    width: 10vw;
+    height: 10vw;
+  }
+}/*# sourceMappingURL=index.css.map */

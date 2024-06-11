@@ -1,0 +1,59 @@
+.seat-selector-container {
+  background-color: rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 90dvw;
+  height: 100%;
+  overflow: hidden;
+  padding: 2.5rem;
+  justify-content: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.seat-selector-container p.seat-caption {
+  font-weight: bold;
+  min-height: 2rem;
+  text-align: center;
+}
+.seat-selector-container .seat-selector {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.seat-selector-container .seat-selector .seat-selector-main .seat-selector-main__left {
+  display: grid;
+  justify-content: center;
+  height: 100%;
+  margin: 0 auto !important;
+  width: 20%;
+}
+.seat-selector-container .seat-selector .seat-selector-main .seat-selector-main__center {
+  display: grid;
+  justify-content: center;
+  height: 100%;
+  margin: 0 auto !important;
+  width: 45%;
+}
+.seat-selector-container .seat-selector .seat-selector-main .seat-selector-main__right {
+  display: grid;
+  justify-content: center;
+  height: 100%;
+  margin: 0 auto !important;
+  width: 20%;
+}
+.seat-selector-container .accessibility-space-selector {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 576px) {
+  .seat-selector-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}/*# sourceMappingURL=index.css.map */

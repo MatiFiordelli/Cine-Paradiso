@@ -1,0 +1,35 @@
+@mixin titles{
+    font-weight: 600;
+    letter-spacing: 7px;
+    overflow: hidden;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.menu-title{    
+    font-family: 'Raleway-VariableFont_wght', Arial, Helvetica;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 4px #000;
+    @include titles;
+
+    & a{
+        color: #DDD;
+        cursor: pointer;
+        display: block;
+        transition: 500ms;
+
+        &:hover{
+            color: #FFF;
+            font-weight: 900;
+            text-shadow: 1px 1px 36px rgb(38, 21, 167);
+        }
+    }   
+}
+
+.title{
+    color: rgb(59, 61, 67);
+    -webkit-text-stroke: 1px rgb(255, 255, 255);
+    font-family: 'LuckiestGuy-Regular';
+    text-shadow: 1px 1px 4px rgb(0, 0, 0);
+    @include titles
+}

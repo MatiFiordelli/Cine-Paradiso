@@ -1,0 +1,29 @@
+@mixin wh($m){
+    width: $m;
+    height: $m;    
+}
+
+@mixin mediaQuery($res, $wh){
+    @media  only screen and (min-width: $res){
+        .cinema-seat{
+            @include wh($wh);
+        }
+    }    
+}
+
+.cinema-seat{
+    display: block;
+    margin: 0.7px;
+    border-radius: 4px;
+    @include wh(15px);
+
+    &:hover{
+        scale:1.2;
+    }
+}
+
+@include mediaQuery(576px, 20px);
+@include mediaQuery(768px, 25px);
+@include mediaQuery(992px, 30px);
+@include mediaQuery(1200px, 32px);
+@include mediaQuery(1400px, 2vw);

@@ -1,0 +1,12 @@
+.top-presentation {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+
+@media only screen and (max-width: 576px) {
+  .top-presentation {
+    height: 380px !important;
+  }
+}/*# sourceMappingURL=index.css.map */

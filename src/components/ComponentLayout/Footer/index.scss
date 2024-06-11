@@ -1,0 +1,25 @@
+.footer{
+    
+
+    & div{
+        background-color:rgb(33, 37, 41) !important;
+        color: #DDD;
+
+        & a{
+            & img{
+                //filter:grayscale(1);
+                transition: 500ms;
+                user-select: none;
+
+                &:hover{
+                    //filter:grayscale(0);
+                    scale: 1.2;
+                }
+            }
+        }
+    }
+    & .copyright{
+        background-color: #3a3f44;
+        color:#DDD;
+    }
+}

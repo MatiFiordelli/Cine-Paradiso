@@ -1,0 +1,9 @@
+.top-presentation{
+     user-select: none;
+     pointer-events:none;
+}
+@media only screen and (max-width: 576px){
+    .top-presentation{
+        height: 380px !important;
+    }
+}

@@ -1,0 +1,31 @@
+@mixin limit-text-lines($lines) {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-body {
+    font-variant: small-caps;
+    cursor: pointer;
+
+    & .card-body__title {
+        font-weight: bold;
+        height: 3rem;
+        @include limit-text-lines(2);
+    }
+
+    & .card-body__hidden-block {
+        overflow: hidden;
+        font-size: 0.9rem;
+
+        & .card-body__hidden-block--overview {
+            height: 4rem;
+            @include limit-text-lines(3);
+        }
+        & .card-body__hidden-block--genres {
+            height: 2.5rem;
+            @include limit-text-lines(2);
+        }
+    }
+}

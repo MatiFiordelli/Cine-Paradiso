@@ -1,0 +1,8 @@
+.header{
+    z-index: 1000;
+	transition: 1500ms;
+}
+.header:hover{
+    transition: 500ms;
+    background-color: rgba(68,68,68,.5);
+}

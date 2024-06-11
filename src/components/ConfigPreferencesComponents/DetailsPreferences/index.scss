@@ -1,0 +1,9 @@
+.table-details{
+    width:70%;
+}
+
+@media only screen and (max-width: 576px){
+    .table-details{
+        width: 90vw;
+    }
+}

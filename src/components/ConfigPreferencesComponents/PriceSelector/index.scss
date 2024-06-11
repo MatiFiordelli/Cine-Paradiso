@@ -1,0 +1,10 @@
+.table-prices{
+    width: 90vw;
+
+    & tbody{
+
+        & label{
+            text-wrap: pretty;
+        }
+    }
+}

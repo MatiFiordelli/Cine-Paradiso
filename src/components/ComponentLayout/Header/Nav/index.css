@@ -1,0 +1,40 @@
+.navbar-toggler-icon {
+  filter: invert(1);
+  background-color: transparent !important;
+}
+
+.ul-navbar .menu-link {
+  font-variant: small-caps;
+  font-weight: 500;
+  transition: 500ms;
+  position: relative;
+  text-shadow: 0.5px 0.5px #000;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.ul-navbar .menu-link::before {
+  content: attr(data-text);
+  color: rgb(236, 195, 46);
+  display: block;
+  position: absolute;
+  top: inherit;
+  left: inherit;
+  overflow: hidden;
+  margin: inherit;
+  padding: 0;
+  text-decoration: underline;
+  width: 0px;
+  z-index: 1;
+}
+.ul-navbar .menu-link:hover::before {
+  transition: 1600ms;
+  width: 100%;
+}
+
+@media only screen and (max-width: 991px) {
+  .ul-navbar {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    padding-left: 2vw;
+  }
+}/*# sourceMappingURL=index.css.map */

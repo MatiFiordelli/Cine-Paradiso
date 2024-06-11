@@ -1,0 +1,96 @@
+.mySwiper {
+	width: auto;
+	height: 100vh;	
+	text-align: start;
+	
+	& .swiper-wrapper{
+		display: grid;
+		grid-auto-rows: 130px;
+		gap:55px;
+		height: 100vh;
+
+		& .swiper-slide {
+			color: #fff;
+			display: flex;
+			align-items: flex-start;
+			justify-content: flex-start;
+			height: 180px;
+	
+			& img{
+				width: auto;
+				height: 180px;
+			}
+		}
+	}
+}
+
+@media only screen and (min-width:768px){
+	.mySwiper{
+		height: 380px !important;
+		text-align: center;
+
+		& .swiper-wrapper{
+			display: flex;
+			grid-auto-flow: column;
+			gap: 15px;
+			height: 100%;
+
+			& .swiper-slide {
+				justify-content: flex-start;
+				align-items: flex-start;
+				width: 150px !important;
+
+				& img{
+					width: auto;
+					height: 230px;
+
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width:1500px){
+	.mySwiper{
+		height: 380px !important;
+
+		& .swiper-wrapper{
+			grid-auto-rows: 150px;
+			gap:30px;
+
+			& .swiper-slide {
+
+				& img{
+					width: auto;
+					height: 250px;
+
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width:2500px){
+	.mySwiper{
+		height: 500px !important;
+	}
+}
+
+@media only screen and (min-width:3500px){
+	.mySwiper{
+		height: 45vh !important;
+
+		& .swiper-wrapper{
+			grid-auto-rows: 150px;
+			gap:240px;
+
+			& .swiper-slide {
+
+				& img{
+					width: auto;
+					height: 450px;
+				}
+			}
+		}
+	}
+}

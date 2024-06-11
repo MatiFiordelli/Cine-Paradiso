@@ -1,0 +1,30 @@
+.card-body {
+  font-variant: small-caps;
+  cursor: pointer;
+}
+.card-body .card-body__title {
+  font-weight: bold;
+  height: 3rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-body .card-body__hidden-block {
+  overflow: hidden;
+  font-size: 0.9rem;
+}
+.card-body .card-body__hidden-block .card-body__hidden-block--overview {
+  height: 4rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-body .card-body__hidden-block .card-body__hidden-block--genres {
+  height: 2.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}/*# sourceMappingURL=index.css.map */

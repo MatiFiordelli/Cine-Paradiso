@@ -1,0 +1,257 @@
+.sectHero {
+  width: 90vw;
+  height: 100%;
+  margin: 0 auto;
+  padding: 1.5rem;
+  border-radius: 0.8rem;
+  font-size: 1.05em;
+  line-height: 1.5;
+}
+
+.cardWrap {
+  width: 28rem;
+  margin: 4em auto;
+  color: #e0cece;
+  font-family: sans-serif;
+  display: flex;
+}
+
+.cardHero {
+  background: linear-gradient(to bottom, #0047aa 0%, #0047aa 26%, #ccddff 26%, #ccddff 100%);
+  height: 12rem;
+  position: relative;
+  padding: 0.5rem;
+  flex-grow: 1;
+  border: none;
+}
+
+.priceHead2, .priceHead3, .spanHead {
+  margin: 0;
+}
+
+.cardLeft {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  width: 18rem;
+  height: auto;
+}
+
+.cardRight {
+  width: 8.5rem;
+  border-left: 0.12rem dashed #f0f0f0;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  height: auto;
+}
+.cardRight:before, .cardRight:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0.9rem;
+  height: 0.9rem;
+  background: #f8f6f6;
+  border-radius: 50%;
+  left: -0.5rem;
+}
+.cardRight:before {
+  top: -0.4rem;
+}
+.cardRight:after {
+  bottom: -0.4rem;
+}
+
+.priceHead2 {
+  font-size: 1.8rem;
+  margin-top: 0.1rem;
+  color: #eee;
+}
+.priceHead2 .spanHead {
+  font-weight: 600;
+}
+
+.priceHead22 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000;
+  text-transform: uppercase;
+}
+
+.titleHero, .name, .time {
+  text-transform: uppercase;
+  font-weight: normal;
+}
+.titleHero .priceHead2, .name .priceHead2, .time .priceHead2 {
+  font-size: 0.8em;
+  color: #000000;
+  margin: 0.08rem;
+}
+.titleHero .spanHead, .name .spanHead, .time .spanHead {
+  font-size: 0.5em;
+  color: #0047aa;
+}
+
+.titleHero {
+  margin: 0.3rem 0 0 0;
+}
+
+.name {
+  margin: 0.3rem 0 -0.5rem 0;
+}
+
+.time {
+  margin: 0.5rem 0 0 0;
+}
+
+.seat, .time {
+  float: left;
+}
+
+.eye {
+  position: relative;
+  width: 3rem;
+  height: 1.5rem;
+  background: #333;
+  margin: 0 auto;
+  border-radius: 1rem/0.6rem;
+  z-index: 1;
+}
+.eye:before, .eye:after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+}
+.eye:before {
+  width: 1rem;
+  height: 1rem;
+  background: #0047aa;
+  z-index: 2;
+  left: 8px;
+  top: 4px;
+}
+.eye:after {
+  width: 0.5rem;
+  height: 0.5rem;
+  background: #fff;
+  z-index: 3;
+  left: 12px;
+  top: 8px;
+}
+
+.number {
+  text-align: center;
+}
+.number .priceHead3 {
+  color: #0047aa;
+  margin: 1.5rem 0 0 0;
+  font-size: 2.5rem;
+}
+.number .priceHead5 {
+  color: #fff;
+  margin-top: 1rem;
+}
+.number .spanHead {
+  display: block;
+  color: #000;
+}
+
+.barcode img {
+  height: 3rem;
+  margin: 0 auto;
+}
+
+.cardHero2 {
+  background: linear-gradient(to bottom, #0047aa 0%, #0047aa 26%, #0080ff 26%, #0080ff 100%);
+  height: 12rem;
+  position: relative;
+  padding: 0.5rem;
+  flex-grow: 1;
+  border: none;
+}
+
+.priceHead4 {
+  color: #000;
+}
+
+.cardHero2 .spanHead {
+  color: #fff;
+}
+
+.cardBk {
+  color: #ccddff;
+  background-color: #0080ff;
+  margin-bottom: 2em;
+  height: 5.8rem;
+}
+
+.cardRight2 {
+  width: 8.5rem;
+  border-left: 0.12rem dashed #a5a2a2;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  padding: 1rem;
+}
+.cardRight2:before, .cardRight2:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0.9rem;
+  height: 0.9rem;
+  background: #f8f6f6;
+  border-radius: 50%;
+  left: -0.5rem;
+}
+.cardRight2:before {
+  top: -0.4rem;
+}
+.cardRight2:after {
+  bottom: -0.4rem;
+}
+
+@media only screen and (max-width: 516px) {
+  .sectHero {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 0.8rem;
+    font-size: 1.05em;
+    line-height: 1.5;
+  }
+  .cardWrap {
+    width: 95%;
+  }
+  .cardLeft .cardRight {
+    height: auto;
+  }
+  .cardLeft {
+    width: auto;
+  }
+  .priceHead2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    white-space: nowrap;
+  }
+  .number {
+    margin-top: 1rem;
+  }
+  .number {
+    text-align: center;
+  }
+  .number .priceHead3 {
+    color: #0047aa;
+    margin: 1.5rem 0 0 0;
+    font-size: 2.5rem;
+  }
+  .number .priceHead5 {
+    color: #fff;
+    margin-top: 0.3rem;
+  }
+  .number .spanHead {
+    display: block;
+    color: #000;
+  }
+  .cardBk {
+    height: auto;
+  }
+}/*# sourceMappingURL=indexDemo.css.map */

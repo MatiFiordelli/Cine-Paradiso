@@ -1,0 +1,41 @@
+.cinema-seat {
+  display: block;
+  margin: 0.7px;
+  border-radius: 4px;
+  width: 15px;
+  height: 15px;
+}
+.cinema-seat:hover {
+  scale: 1.2;
+}
+
+@media only screen and (min-width: 576px) {
+  .cinema-seat {
+    width: 20px;
+    height: 20px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .cinema-seat {
+    width: 25px;
+    height: 25px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .cinema-seat {
+    width: 30px;
+    height: 30px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .cinema-seat {
+    width: 32px;
+    height: 32px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .cinema-seat {
+    width: 2vw;
+    height: 2vw;
+  }
+}/*# sourceMappingURL=index.css.map */

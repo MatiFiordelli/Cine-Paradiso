@@ -1,0 +1,39 @@
+
+
+.imgRnd{
+    border-radius: 10px;
+}
+
+.abtHd1{
+    font-weight: 700;
+    font-size: 2rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.ftHd1{
+    font-weight: 700;
+    font-size: 2rem;
+    text-transform: uppercase;
+    
+}
+.abtHd2{
+    font-weight: 500;
+}
+.abtP{
+    font-weight: 400;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.cntcHd1{
+    font-weight: 700;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+@media only screen and (max-width:576px){
+    .bk-image{
+        text-align: center;
+    }
+}

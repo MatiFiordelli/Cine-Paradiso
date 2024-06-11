@@ -1,0 +1,13 @@
+.c-section {
+  width: 90w;
+  height: 100%;
+  margin-top: 1rem;
+  padding:1.5rem;
+  margin: 0 auto;
+  border-radius: 1rem; 
+  box-shadow: 0 0 1rem rgba(124, 124, 124, 0.26); 
+  
+  font-size: 1.03em;
+  line-height: 1.5;
+  }
+

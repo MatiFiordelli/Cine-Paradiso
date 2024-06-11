@@ -1,0 +1,110 @@
+Semana 2:
+
+Front End:
+Paginas de CONFIGURACION y PAGO tendran libre acceso, pero a la hora de pagar, se requerira hacer login o registrarse
+
+FLUJO DE PAGINAS: 
+    HOME->DETALLES->CONFIGURACION->PAGO
+    HOME->CONFIGURACION->PAGO 
+depende desde donde el Usuario se decide comprar el Ticket(Card del Home o Pagina de Detalles)
+                
+
+1-Crear pagina de configuracion de preferencias de peliculas.
+1a-En ella se debera elegir la fecha de la funcion, luego el horario, dividido en tarde/noche, 
+    ahi mismo va a figurar el formato, sea subtitulada o doblada, asi como el idioma de la pelicula en 
+    ese horario, tambien se podra ver la disponibilidad del formato 2D/3D. por ultimo, se debera elegir 
+    el/los asientos, rango etario de los uruarios que asistiran.
+    Se debe incluir de forma clara el hecho de que la eleccion tenga o no valor promocional.
+    futuramente se podra incluir la compra de comidas y bebidas.
+
+2-Crear pagina de detalle con confirmacion de pago y registro en caso de no estar logeado
+2a- En esta pagina se vera un resumen detallado de la compra, incluyendo todo lo seleccionado en la pagina
+    anterior.
+    Dede haber un cartel que inste al usuario a revisar los datos antes de realizar el pago, asi como una
+    sugerencia de revision de las FAQ(frequently asked questions), la qual es un link hacia una pagina de
+    respuesta a las dudas mas frecuentes por parte de los usuarios.
+    Tambien debe figurar el mapa(no muy grande).
+2b- Debe incluir una subseccion en la que haya un texto de Advertencia, por ejemplo, que no se puede ingresar
+    a la funcion con alimentos y bebidas que nop hayan sido adquiridas en el Candy Bar.
+    Otra advertencia puede ser, respecto a que algunas peliculas pueden contener flashes que pueden llegar a
+    afectar a personas con epilepsia fotosensible.
+    Avisar que en el detalle de la compra, se incluira un cargo por compra online de '$250' por cada entrada.
+    En caso de la pelicula no esté catalogada como Apta para todo publico, se debe informar a traves de un 
+    texto informativo, de acuerdo a las leyes locales.
+    Se debe informar que la aceptacion de todo eso viene dada por el pago del ticket.
+    Para tener acceso al boton de pago, debe estar logueado, de lo contrario, debe ser derivado a la pagina de
+    registro.
+
+3- Crear la pagina de FAQ, 'respuestas a preguntas frecuentes' por parte de los usuarios. Se puede usa Collapse
+    de Bootstrap
+3a- En ella debe incluirse la politica de la empresa, a partir de que edad pagan los niños, Terminos y condiciones,
+    precio de entradas. A partir de q edad pagan los niños. Como hago para comprar entradas online. que capacidad
+    tienen las salas. etc
+
+4- Crear pagina de Tarifas de entradas
+4a- Se debe incluir una tabla en la que figuren los formatos 2D/3D, y los precios acorde a Tarifa general, 
+    y la promocion de los precios promocionales a mitad de precio de los 'Viernes Paradiso' y la tarifa referente
+    a 'Mayores de 65/Menores de 12'
+    Informar que se aplica un cargo de '$250' por compra online.
+
+5- Crear pagina web responsive con la cartelera 'Newsletter', para ser enviada en formato email. Con uso de imagenes de 
+    resolucion pequeña para mobile y normales para desktop. 
+5a- Aclaracion: en la pagina de registro, debe haber un checkbox de aceptacion de envio de newsletters.
+
+
+Backend:
+1- Se necesita una tabla de precios con la lista de precios. acorde al punto 4a de las tareas de Frontend.
+2- Se necesita una API que envie un email de confirmacion de pago para el Usuario, en el que figure el detalle
+    completo de su compra.
+3- Se necesita una API que guarde en una tabla, todos los pagos, para hacer un resumen al finalizar el mes, 
+    y mostrarlo en formato talba/grafico de lineas o barras en la futura seccion de administracion.
+3a- debe incluir: (id de la pelicula, genero, titulo) y (fecha de la funcion, hora, rango etario, cantidad de
+    asientos ocupados en esa funcion) 
+4- Se necesita una API que envie un email con la cartelera una vez a la semana, digamos un Jueves.
+4a- ese email incluira una pagina web, desarrollada por el equipo de Front end en el punto 5.
+
+Aclaracion: Los puntos 2 y 3 del Backend, ocurren cuando el pago se confirma.
+
+Formato de los JSON Login y Sigup:
+login: {
+    email,
+    password
+}
+
+user: {
+    id,
+    name,
+    surname,
+    age,
+    gender,
+    dni,
+    email,
+    tel,
+    address,
+    city   
+}
+(dni es el documento nacional de identidad)
+
+
+-------
+Indicaciones para Pablo:
+En el momento en que el usuario entra a la pagina de Pagos, se debe hacer un control para saber si esta logueado, en caso de no estarlo,
+debe aparecer un popup que le avise que se lo redirigira a la pagina de logueo/registro.
+una vez completado el registro, la pagina de login/registro, debe redirir al usuario a la pagina en la que estaba inicialmente, es decir,
+la pagina de pagos.
+La manera de hacerlo es la siguiente:
+La pagina de pagos, va a recibir datos q estaran disponibles en el sesionStorage(desde la pagina de configuracion de preferencias), 
+luego abrir un popup de aviso.
+luego useNavigate hacia la pagina de logueo/registro, con una Prop llamada origin, la cual va a informar desde donde se esta yendo a 
+la pagina de login/registro.
+una vez finalizado el registro, hacer un useNavigate hacia ese 'origin', para volver. obviamente, si origin es null, debe redirigir 
+hacia el home, como lo haria normalmente.
+en el momento en que se vuelve a la pagina pagos, ya estara logueado, por lo cual podra apretar el boton de PAGAR, sin problemas.
+en el momento en que el pago es confirmado, hay que vaciar esos datos del sesionStorage. lo q se recibieron inicialmente al entrar.
+en ese momento, se va a enviar desde el back end, un email de confirmacion de pago con los detalles de la compra, al email(logueado).
+eso lo haces con un fetch, hacia un endpoint que usa el metodo POST, en el cual le pasas ese correo con los datos necesarios de la
+pelicula/compra.
+a su vez, desde el back end, se va a enviar automaticamente esa info a una tabla de resumen para analisis mensual.
+
+
+aclaracion importante, el LOGIN debe corregirse, cambiar localStorage, por sesionStorage.

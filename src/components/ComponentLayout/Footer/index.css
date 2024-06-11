@@ -1,0 +1,17 @@
+.footer div {
+  background-color: rgb(33, 37, 41) !important;
+  color: #DDD;
+}
+.footer div a img {
+  transition: 500ms;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.footer div a img:hover {
+  scale: 1.2;
+}
+.footer .copyright {
+  background-color: #3a3f44;
+  color: #DDD;
+}/*# sourceMappingURL=index.css.map */

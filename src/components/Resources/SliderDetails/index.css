@@ -1,0 +1,75 @@
+.mySwiper {
+  width: auto;
+  height: 100vh;
+  text-align: start;
+}
+.mySwiper .swiper-wrapper {
+  display: grid;
+  grid-auto-rows: 130px;
+  gap: 55px;
+  height: 100vh;
+}
+.mySwiper .swiper-wrapper .swiper-slide {
+  color: #fff;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 180px;
+}
+.mySwiper .swiper-wrapper .swiper-slide img {
+  width: auto;
+  height: 180px;
+}
+
+@media only screen and (min-width: 768px) {
+  .mySwiper {
+    height: 380px !important;
+    text-align: center;
+  }
+  .mySwiper .swiper-wrapper {
+    display: flex;
+    grid-auto-flow: column;
+    gap: 15px;
+    height: 100%;
+  }
+  .mySwiper .swiper-wrapper .swiper-slide {
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 150px !important;
+  }
+  .mySwiper .swiper-wrapper .swiper-slide img {
+    width: auto;
+    height: 230px;
+  }
+}
+@media only screen and (min-width: 1500px) {
+  .mySwiper {
+    height: 380px !important;
+  }
+  .mySwiper .swiper-wrapper {
+    grid-auto-rows: 150px;
+    gap: 30px;
+  }
+  .mySwiper .swiper-wrapper .swiper-slide img {
+    width: auto;
+    height: 250px;
+  }
+}
+@media only screen and (min-width: 2500px) {
+  .mySwiper {
+    height: 500px !important;
+  }
+}
+@media only screen and (min-width: 3500px) {
+  .mySwiper {
+    height: 45vh !important;
+  }
+  .mySwiper .swiper-wrapper {
+    grid-auto-rows: 150px;
+    gap: 240px;
+  }
+  .mySwiper .swiper-wrapper .swiper-slide img {
+    width: auto;
+    height: 450px;
+  }
+}/*# sourceMappingURL=index.css.map */

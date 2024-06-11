@@ -1,0 +1,12 @@
+.image-logo {
+  border-radius: 50%;
+  filter: grayscale(0);
+  transition: 2200ms ease-in-out;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.image-logo:hover {
+  filter: grayscale(1);
+  transform: rotateZ(360deg);
+}/*# sourceMappingURL=index.css.map */

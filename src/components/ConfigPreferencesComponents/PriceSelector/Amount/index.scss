@@ -1,0 +1,15 @@
+.amount-selector {
+	& form {
+		& .inputNumber {
+			-webkit-appearance: textfield !important;
+			margin: 0;
+			-moz-appearance: textfield !important;
+		}
+	}
+}
+
+@media only screen and (min-width: 576px) {
+	.amount-selector {
+		width: 50%;
+	}
+}

@@ -1,0 +1,124 @@
+@import url("./styles/index.css");
+
+@font-face {
+	font-family: "Circular";
+	src: url("./assets/fonts/circular/circular-std-medium-500.ttf");
+}
+@font-face {
+	font-family: "Monserrat-Light";
+	src: url("./assets/fonts//monserrat/Montserrat-Light.ttf");
+}
+@font-face {
+	font-family: "Monserrat-medium";
+	src: url("./assets/fonts/monserrat/Montserrat-Medium.ttf");
+}
+@font-face {
+	font-family: "Monserrat-Bold";
+	src: url("./assets/fonts//monserrat/Montserrat-Bold.ttf");
+}
+@font-face {
+	font-family: "Gotham";
+	src: url("./assets/fonts/gotham/GothamBold.ttf");
+}
+@font-face {
+	font-family: "CamelliaSignature";
+	src: url("./assets/fonts/camellia_signature/CamelliaSignature.ttf");
+}
+@font-face {
+	font-family: "LilitaOne-Regular";
+	src: url("./assets/fonts/lilita_one/LilitaOne-Regular.ttf");
+}
+@font-face {
+	font-family: "LuckiestGuy-Regular";
+	src: url("./assets/fonts/luckiest_guy/LuckiestGuy-Regular.ttf");
+}
+@font-face {
+	font-family: "Raleway-VariableFont_wght";
+	src: url("./assets/fonts/Raleway/Raleway-VariableFont_wght.ttf");
+}
+@font-face {
+	font-family: "FuturaCyrillicBold";
+	src: url("./assets/fonts/futura-pt/FuturaCyrillicBold.ttf");
+}
+
+:root {
+	font-family: "Circular", Inter, system-ui, Avenir, Helvetica, Arial,
+		sans-serif;
+	line-height: 1.5;
+	font-size: clamp(15px, 1vw, 60px);
+	font-weight: 400;
+	margin: 0;
+	padding: 0;
+	outline: none;
+
+	//color-scheme: light dark;
+	//color: rgba(255, 255, 255, 0.87);
+	//background-color: #242424;
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-tap-highlight-color: transparent;
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+	margin: 0;
+	display: grid;
+	justify-content: start;
+	align-items: start;
+	width: 100dvw;
+	min-height: 100vh;
+	overflow-x: hidden;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+
+h1 {
+	font-size: 3.2em;
+	line-height: 1.1;
+}
+
+button {
+	border-radius: 8px;
+	border: 1px solid transparent;
+	padding: 0.6em 1.2em;
+	font-size: 1em;
+	font-weight: 500;
+	font-family: inherit;
+	background-color: #1a1a1a;
+	cursor: pointer;
+	transition: border-color 0.25s;
+}
+button:hover {
+	border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+	outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		color: #213547;
+		background-color: #ffffff;
+	}
+	a:hover {
+		color: #747bff;
+	}
+	button {
+		background-color: #f9f9f9;
+	}
+}
