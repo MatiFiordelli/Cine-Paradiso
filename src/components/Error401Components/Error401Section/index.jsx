@@ -1,5 +1,5 @@
 import React from "react";
-import error401Image from "../../../assets/images/error401/error401jk.webp"
+import error401Image from "../../../assets/images/error401/error401jk2.webp"
 
 export default function Error401Section() {
   return (
