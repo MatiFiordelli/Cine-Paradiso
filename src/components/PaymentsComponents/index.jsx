@@ -77,20 +77,19 @@ export default function PaymentsComponent() {
 
     setProcessingPayment(true); // Iniciar el proceso de pago
 
-    const id = await createdPreference();
-    if (id) {
-      setPreferenceId(id);
-      setShowWallet(true);
-      sendPreferencesToUpdateTableDBFromPayments(); // Llama a la función para actualizar la base de datos
-    }
-
-    setProcessingPayment(false); // Permitir clics nuevamente después de que se complete la solicitud
-
-    if (id) {
-      sendPreferencesToUpdateTableDBFromPayments();
+    try {
+      const id = await createdPreference();
+      if (id) {
+        setPreferenceId(id);
+        setShowWallet(true);
+        await sendPreferencesToUpdateTableDBFromPayments(); // Llama a la función para actualizar la base de datos
+      }
+    } catch (error) {
+      console.error("Error processing payment:", error);
+    } finally {
+      setProcessingPayment(false); // Permitir clics nuevamente después de que se complete la solicitud
     }
   };
-
   const { isAuthenticated, user, loginWithPopup } = useAuth0();
   const [paymentData, setPaymentData] = useState(null);
   const [userData, setUserData] = useState({
