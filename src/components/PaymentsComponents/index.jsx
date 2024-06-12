@@ -285,7 +285,7 @@ export default function PaymentsComponent() {
             <div className="text-center mt-5">
               <button
                 onClick={handleBuy}
-                className="rounded-pill px-4 py-2 btn-secondary"
+                className="rounded-md px-1 py-2 btn-secondary"
               >
                 GENERAR BOTON DE PAGO
               </button>
