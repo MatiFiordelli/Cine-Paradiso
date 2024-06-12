@@ -81,13 +81,19 @@ export default function ConfigPreferencesComponent() {
       });
   };
 
-  useEffect(() => {
-    fetchHours();
-    fetchPrices();
-    DynamicImportSeatSelectorComponent();
-    getMovieDetails();
-    seatsDatesHours();
-  }, []);
+  const checkToRenewAndRemoveOldRecordsTableSeatsdateshours = () => {
+		fetch("https://api-cine-paradiso.vercel.app/renew-and-remove-old-records-table-seatsdateshours")
+			.catch((err)=>console.log(err))
+	}
+
+	useEffect(() => {
+		checkToRenewAndRemoveOldRecordsTableSeatsdateshours();
+		fetchHours();
+		fetchPrices();
+		DynamicImportSeatSelectorComponent();
+		getMovieDetails();
+		seatsDatesHours();
+	}, []);
 
   useEffect(() => {
     let obj = null;
