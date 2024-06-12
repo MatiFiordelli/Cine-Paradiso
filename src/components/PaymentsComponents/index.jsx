@@ -179,8 +179,8 @@ export default function PaymentsComponent() {
 
   return (
     <div>
-      <h1 className="text-center mb-5">Proceso de Pago</h1>
-      <div className="container py-5">
+      <h1 className="text-center mt-5 pt-5 abtHd1">Proceso de Pago</h1>
+      <div className="container p-5 mb-5">
         <Card>
           <div className="card-body">
             <div className="row">
@@ -285,7 +285,7 @@ export default function PaymentsComponent() {
               <button
                 onClick={handleBuy}
                 disabled={processingPayment}
-                className="rounded-md px-1 py-2 btn-secondary"
+                className="rounded-md px-2 py-2 btn-secondary"
               >
                 GENERAR BOTON DE PAGO
               </button>
