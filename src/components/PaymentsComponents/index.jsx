@@ -82,16 +82,12 @@ export default function PaymentsComponent() {
       if (id) {
         setPreferenceId(id);
         setShowWallet(true);
-        // No llama a la función para actualizar la base de datos aquí
+        await sendPreferencesToUpdateTableDBFromPayments(); // Llama a la función para actualizar la base de datos
       }
     } catch (error) {
-      console.error("Error al procesar el pago:", error);
+      console.error("Error processing payment:", error);
     } finally {
       setProcessingPayment(false); // Permitir clics nuevamente después de que se complete la solicitud
-      // Llama a la función para actualizar la base de datos solo después de un pago exitoso
-      if (!processingPayment && preferenceId) {
-        sendPreferencesToUpdateTableDBFromPayments();
-      }
     }
   };
 
