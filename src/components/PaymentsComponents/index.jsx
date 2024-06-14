@@ -82,14 +82,19 @@ export default function PaymentsComponent() {
       if (id) {
         setPreferenceId(id);
         setShowWallet(true);
-        sendPreferencesToUpdateTableDBFromPayments(); // Llama a la función para actualizar la base de datos
+        // No llama a la función para actualizar la base de datos aquí
       }
     } catch (error) {
-      console.error("Error processing payment:", error);
+      console.error("Error al procesar el pago:", error);
     } finally {
       setProcessingPayment(false); // Permitir clics nuevamente después de que se complete la solicitud
+      // Llama a la función para actualizar la base de datos solo después de un pago exitoso
+      if (!processingPayment && preferenceId) {
+        sendPreferencesToUpdateTableDBFromPayments();
+      }
     }
   };
+
   const { isAuthenticated, user, loginWithPopup } = useAuth0();
   const [paymentData, setPaymentData] = useState(null);
   const [userData, setUserData] = useState({
