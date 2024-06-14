@@ -82,7 +82,7 @@ export default function PaymentsComponent() {
       if (id) {
         setPreferenceId(id);
         setShowWallet(true);
-        await sendPreferencesToUpdateTableDBFromPayments(); // Llama a la función para actualizar la base de datos
+        sendPreferencesToUpdateTableDBFromPayments(); // Llama a la función para actualizar la base de datos
       }
     } catch (error) {
       console.error("Error processing payment:", error);
