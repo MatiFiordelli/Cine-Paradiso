@@ -1,4 +1,4 @@
-import React, { useRef, memo, useContext } from "react";
+import React, { useRef, memo, useContext, useEffect } from "react";
 import "./index.css";
 import SeatRows from "./SeatRows";
 import { ConfigPreferencesCtx, MatrixCtx } from "../../../contexts";
@@ -7,7 +7,11 @@ import Legend from "./Legend";
 
 const SeatSelector = () => {
 	const seatCounterRef = useRef(0);
-	const { hourSelection } = useContext(ConfigPreferencesCtx);
+	const { hourSelection, dateSelection } = useContext(ConfigPreferencesCtx);
+	
+	useEffect(() => {
+		seatCounterRef.current=0	
+	}, [hourSelection, dateSelection])
 
 	return (
 		<MatrixCtx.Provider value={{ seatCounterRef }}>

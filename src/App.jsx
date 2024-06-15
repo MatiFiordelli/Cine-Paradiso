@@ -6,7 +6,7 @@ import ComponentLayout from "./components/ComponentLayout";
 import { PreferencesCtx } from "./contexts";
 
 export default function App() {
-	const [preferences, setPreferences] = useState({date: null, hour: null, seats: []})
+	const [preferences, setPreferences] = useState({id:null, date: null, hour: null, seats: []})
 
 	return (
 		<PreferencesCtx.Provider value={{preferences, setPreferences}}>

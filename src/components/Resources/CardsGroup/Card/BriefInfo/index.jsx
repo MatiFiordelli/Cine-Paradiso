@@ -8,7 +8,7 @@ import pathroutes from "../../../../../helpers/pathroutes";
 export default function BriefInfo({ data, i, id}) {
     const { title, overview, vote_average, genre_ids } = data
 	const navigate = useNavigate()
-	const url = pathroutes.details + id
+	const url = pathroutes.details + id + '?' + i
 
 	return (
 		<article

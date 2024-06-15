@@ -23,8 +23,8 @@ export default function PaymentsComponent() {
 
   const sendPreferencesToUpdateTableDBFromPayments = () => {
     // Llama a la función sendPreferencesToUpdateTableDB del primer componente
-    if (preferences.date && preferences.hour && preferences.seats.length > 0) {
-      fetch("https://api-cine-paradiso.vercel.app/update-seatsdateshours", {
+    if (preferences.id && preferences.date && preferences.hour && preferences.seats.length > 0) {
+      fetch("https://api-cine-paradiso.vercel.app/update-seatsdateshourstheaters", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

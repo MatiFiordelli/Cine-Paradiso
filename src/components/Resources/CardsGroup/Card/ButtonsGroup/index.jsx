@@ -11,7 +11,7 @@ export default function ButtonsGroup({ i, id }) {
 			id: id
 		}
 		sessionStorage.setItem('movieSelected', JSON.stringify(obj))
-		navigate(`${pathroutes.config_preferences}`)
+		navigate(`${pathroutes.config_preferences}?${i}`)
 	}
 
 	return (

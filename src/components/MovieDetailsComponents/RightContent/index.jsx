@@ -7,7 +7,7 @@ import "./index.css";
 import { useNavigate } from "react-router-dom";
 import pathroutes from "../../../helpers/pathroutes";
 
-export default function RightContent({ id }) {
+export default function RightContent({ id, i }) {
 	const navigate = useNavigate();
 	const [isUpcomingMovie, setIsUpcomingMovie] = useState(null)
 	
@@ -25,7 +25,7 @@ export default function RightContent({ id }) {
 			id: id
 		}
 		sessionStorage.setItem('movieSelected', JSON.stringify(obj))
-		navigate(`${pathroutes.config_preferences}`);
+		navigate(`${pathroutes.config_preferences}?${i}`);
 	};
 
 	return (

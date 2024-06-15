@@ -11,8 +11,10 @@ import urls from "../../helpers/urls";
 import { useContext } from "react";
 
 export default function ConfigPreferencesComponent() {
-  const navigate = useNavigate();
-  const { preferences, setPreferences } = useContext(PreferencesCtx);
+	const urlParams = window.location.search.slice(1)
+
+	const navigate = useNavigate();
+	const { preferences, setPreferences } = useContext(PreferencesCtx);
 
   const [seatSelectorReset, setSeatSelectorReset] = useState(null);
   const DynamicImportSeatSelectorComponent = async () => {
@@ -73,16 +75,16 @@ export default function ConfigPreferencesComponent() {
       .then((data) => setFetchedPrices(data));
   };
 
-  const seatsDatesHours = () => {
-    fetch("https://api-cine-paradiso.vercel.app/get-seatsdateshours")
-      .then((res) => res.json())
-      .then((data) => {
-        setSeatsdateshoursJSON(data);
-      });
-  };
+	const seatsDatesHours = () => {
+		fetch("https://api-cine-paradiso.vercel.app/get-seatsdateshourstheaters")
+			.then((res) => res.json())
+			.then((data) => {
+				setSeatsdateshoursJSON(data);
+			});
+	};
 
-  const checkToRenewAndRemoveOldRecordsTableSeatsdateshours = () => {
-		fetch("https://api-cine-paradiso.vercel.app/renew-and-remove-old-records-table-seatsdateshours")
+	const checkToRenewAndRemoveOldRecordsTableSeatsdateshours = () => {
+		fetch("https://api-cine-paradiso.vercel.app/renew-and-remove-old-records-table-seatsdateshourstheaters")
 			.catch((err)=>console.log(err))
 	}
 
@@ -93,6 +95,8 @@ export default function ConfigPreferencesComponent() {
 		DynamicImportSeatSelectorComponent();
 		getMovieDetails();
 		seatsDatesHours();
+		
+		updatePreferencesObj({ id: urlParams });
 	}, []);
 
   useEffect(() => {
@@ -124,29 +128,21 @@ export default function ConfigPreferencesComponent() {
     setSeatsCodeSelectionArray([]);
   }, [amountAllowedSeats]);
 
-  const filterHourToGetSeats = () => {
-    const dateSelectionString = `${dateSelection.dayNumber}/${dateSelection.monthNumber}`;
+	const filterHourToGetSeats = () => {
+		const filterByMovieId = seatsdateshoursJSON[0].results.filter(e=>e.teather_movie_id===urlParams)
 
-    const filteredDateObj = seatsdateshoursJSON[0].seatsdateshours.filter(
-      (e) => {
-        return e.date === dateSelectionString;
-      }
-    );
+		const dateSelectionString = `${dateSelection.dayNumber}/${dateSelection.monthNumber}`;
+
+		const filteredDateObj = filterByMovieId[0].seatsdateshours.filter(
+			(e) => {
+				return e.date === dateSelectionString;
+			}
+		);
 
     return filteredDateObj[0].schedules.filter((e) => {
       return e.hour === hourSelection;
     });
   };
-
-  /* useEffect(()=>{
-		if(filteredHourJSON) {
-			const obj = {
-				totalSeats: filteredHourJSON[0].seats.length,
-				reservedSeatsAmount: filteredHourJSON[0].seats.filter((e)=>e===true).length
-			}
-			setSeatsDetails(obj)
-		}
-	},[filteredHourJSON]) */
 
   useEffect(() => {
     if (hourSelection && dateSelection) {
@@ -183,18 +179,21 @@ export default function ConfigPreferencesComponent() {
     navigate(pathroutes.payments);
   };
 
-  const updatePreferencesObj = (content) => {
-    if (preferences) {
-      if (content.date)
-        setPreferences({
-          ...preferences,
-          date: `${content.date.dayNumber}/${content.date.monthNumber}`,
-        });
-      if (content.hour) setPreferences({ ...preferences, hour: content.hour });
-      if (content?.seats?.length > 0)
-        setPreferences({ ...preferences, seats: content.seats });
-    }
-  };
+	const updatePreferencesObj = (content) => {
+		if (preferences) {
+			if (content.date)
+				setPreferences({
+					...preferences,
+					date: `${content.date.dayNumber}/${content.date.monthNumber}`,
+				});
+			if (content.hour)
+				setPreferences({ ...preferences, hour: content.hour });
+			if (content?.seats?.length > 0)
+				setPreferences({ ...preferences, seats: content.seats });
+			if (content?.id)
+				setPreferences({ ...preferences, id: content.id})
+		}
+	};
 
   useEffect(() => {
     updatePreferencesObj({ date: dateSelection });
@@ -205,24 +204,6 @@ export default function ConfigPreferencesComponent() {
   useEffect(() => {
     updatePreferencesObj({ seats: [...seatsCodeSelectionArray] });
   }, [seatsCodeSelectionArray]);
-
-  const sendPreferencesToUpdateTableDB = () => {
-    if (preferences.date && preferences.hour && preferences.seats.length > 0) {
-      fetch("https://api-cine-paradiso.vercel.app/update-seatsdateshours", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(preferences),
-      })
-        .then(() => alert("OK!")) //USAR SWEET ALERT!!!
-        .catch((err) => alert("Error!"));
-    }
-  };
-
-  /* useEffect(()=>{
-		console.log(preferences)
-	},[preferences]) */
 
   return (
     <section className="d-flex flex-column gap-5">
@@ -250,7 +231,7 @@ export default function ConfigPreferencesComponent() {
         <PriceSelector />
         {seatSelectorReset}
 
-        <DetailsPreferences />
+				<DetailsPreferences />
 
         <button
           className="btn btn-secondary w-25 m-auto my-5"

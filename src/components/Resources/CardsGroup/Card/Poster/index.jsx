@@ -5,10 +5,10 @@ import './index.css'
 import { useNavigate } from "react-router-dom";
 import pathroutes from '../../../../../helpers/pathroutes.js'
 
-export default function Poster({ title, poster, id }) {
+export default function Poster({ title, poster, id, i }) {
     const imgUrl = urls.imgs + poster
 	const navigate = useNavigate()
-	const url = pathroutes.details + id
+	const url = pathroutes.details + id + '?' + i
 	    
 	return (
 		<Tilt

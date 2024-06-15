@@ -9,6 +9,7 @@ import "./index.css";
 import urls from "../../helpers/urls";
 
 export default function MovieDetailsComponent() {
+	const urlParams = window.location.search.slice(1)
 	const { id } = useParams();
 	const [movieDetails, setMovieDetails] = useState(null);
 	const [peopleDetails, setPeopleDetails] = useState(null);
@@ -53,7 +54,7 @@ export default function MovieDetailsComponent() {
 								<TopContent />
 								<div className="bottom-container d-flex">
 									<LeftContent />
-									<RightContent id={id} />
+									<RightContent id={id} i={urlParams} />
 								</div>
 							</section>
 						</MovieDetailsCtx.Provider>

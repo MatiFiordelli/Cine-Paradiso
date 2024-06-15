@@ -10,7 +10,7 @@ function Card({ data, i }) {
 		<>
 			{title && (
 				<div className="card-my-style rounded p-0 border-0 text-center">
-					<Poster title={title} poster={poster_path} id={id} />
+					<Poster title={title} poster={poster_path} id={id} i={i} />
 					<BriefInfo data={data} i={i} id={id} />
 					<ButtonsGroup i={i} id={id} />
 				</div>
