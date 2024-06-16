@@ -11,7 +11,7 @@ import urls from "../../helpers/urls";
 import { useContext } from "react";
 
 export default function ConfigPreferencesComponent() {
-	const urlParams = window.location.search.slice(1)
+	const [urlParams, setUrlParams] = useState(window.location.search.slice(1))
 
 	const navigate = useNavigate();
 	const { preferences, setPreferences } = useContext(PreferencesCtx);
@@ -89,14 +89,14 @@ export default function ConfigPreferencesComponent() {
 	}
 
 	useEffect(() => {
+    setUrlParams(window.location.search.slice(1))
 		checkToRenewAndRemoveOldRecordsTableSeatsdateshours();
 		fetchHours();
 		fetchPrices();
 		DynamicImportSeatSelectorComponent();
 		getMovieDetails();
 		seatsDatesHours();
-		
-		updatePreferencesObj({ id: urlParams });
+
 	}, []);
 
   useEffect(() => {
@@ -204,6 +204,9 @@ export default function ConfigPreferencesComponent() {
   useEffect(() => {
     updatePreferencesObj({ seats: [...seatsCodeSelectionArray] });
   }, [seatsCodeSelectionArray]);
+  useEffect(()=>{
+    updatePreferencesObj({ id: urlParams });
+  },[urlParams])
 
   return (
     <section className="d-flex flex-column gap-5">
